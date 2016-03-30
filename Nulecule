@@ -1,0 +1,21 @@
+---
+specversion: 0.0.2
+id: docker-bday-nulecule
+
+metadata:
+  name: Docker Birthday #3 App
+  appversion: 0.0.1
+  description: Atomic app for deploying a Docker Birthday app which was made for docker compose
+graph:
+  - name: docker-bday
+    artifacts:
+      kubernetes:
+        - file://artifacts/kubernetes/postgres-svc.yaml
+        - file://artifacts/kubernetes/postgres-rc.yaml
+        - file://artifacts/kubernetes/redis-svc.yaml
+        - file://artifacts/kubernetes/redis-rc.yaml
+        - file://artifacts/kubernetes/worker-rc.yaml
+        - file://artifacts/kubernetes/votingapp-svc.yaml
+        - file://artifacts/kubernetes/votingapp-rc.yaml
+        - file://artifacts/kubernetes/resultapp-svc.yaml
+        - file://artifacts/kubernetes/resultapp-rc.yaml
